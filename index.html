@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paper Planes — The Science of Flight</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-logo">✈ PAPER PLANES</div>
+    <div class="nav-links">
+      <a href="#science">Science</a>
+      <a href="#forces">Forces</a>
+      <a href="#designs">Designs</a>
+      <a href="#game" class="nav-cta">Play Game</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">Aerodynamics for Everyone</div>
+      <h1 class="hero-title">
+        <span class="title-line">THE ART &</span>
+        <span class="title-line italic">SCIENCE</span>
+        <span class="title-line">OF PAPER</span>
+        <span class="title-line accent">FLIGHT</span>
+      </h1>
+      <p class="hero-sub">From a single sheet of paper, an aircraft is born. Explore the physics that keeps your fold aloft — then put it to the test.</p>
+      <div class="hero-actions">
+        <a href="#science" class="btn btn-primary">Explore Science</a>
+        <a href="#game" class="btn btn-ghost">Play the Game ↓</a>
+      </div>
+    </div>
+    <div class="hero-plane-wrapper">
+      <div class="hero-plane" id="heroPlaneSvg">
+        <svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="0,100 320,60 260,100 320,140" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.5"/>
+          <polygon points="0,100 260,100 200,160" fill="var(--paper-shadow)" stroke="var(--ink)" stroke-width="1"/>
+          <line x1="0" y1="100" x2="260" y2="100" stroke="var(--ink)" stroke-width="1"/>
+          <line x1="190" y1="72" x2="260" y2="100" stroke="var(--ink)" stroke-width="0.8" stroke-dasharray="4,3"/>
+        </svg>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">SCROLL DOWN</div>
+  </section>
+
+  <!-- SCIENCE SECTION -->
+  <section class="section section-science" id="science">
+    <div class="section-label">01 — THE SCIENCE</div>
+    <h2 class="section-title">Why Does It Actually Fly?</h2>
+    <p class="section-intro">A paper plane is a surprisingly faithful model of real aircraft aerodynamics. Four invisible forces are constantly at war whenever it takes to the air.</p>
+
+    <div class="science-cards" id="forces">
+      <div class="science-card" data-force="lift">
+        <div class="card-icon">↑</div>
+        <h3>Lift</h3>
+        <p>Air moving over the curved upper surface of a wing travels faster than air beneath it. According to <strong>Bernoulli's principle</strong>, faster air has lower pressure — so the wing gets pushed upward. The angle the plane makes with oncoming air (called the <em>angle of attack</em>) also deflects air downward, creating an equal upward reaction force.</p>
+        <div class="card-formula">P + ½ρv² = constant</div>
+        <div class="card-tag">Bernoulli's Principle</div>
+      </div>
+
+      <div class="science-card" data-force="drag">
+        <div class="card-icon">←</div>
+        <h3>Drag</h3>
+        <p>Every surface facing the airflow resists motion. Paper planes suffer from <strong>form drag</strong> (their blunt cross-section) and <strong>induced drag</strong> (the turbulence shed off wingtips). A sleeker fuselage, swept wings, and a pointed nose all help reduce drag — exactly what champion distance folders do.</p>
+        <div class="card-formula">F<sub>d</sub> = ½ρv²C<sub>d</sub>A</div>
+        <div class="card-tag">Fluid Resistance</div>
+      </div>
+
+      <div class="science-card" data-force="thrust">
+        <div class="card-icon">→</div>
+        <h3>Thrust</h3>
+        <p>Unlike a jet, your arm is the only engine a paper plane gets. The energy of your throw converts to kinetic energy — forward velocity — which gives the wings the airspeed they need to generate lift. A smooth, level release maximises usable thrust and minimises spin-induced instability.</p>
+        <div class="card-formula">KE = ½mv²</div>
+        <div class="card-tag">Kinetic Energy</div>
+      </div>
+
+      <div class="science-card" data-force="gravity">
+        <div class="card-icon">↓</div>
+        <h3>Gravity</h3>
+        <p>Weight always acts downward through the plane's <strong>centre of gravity</strong>. For stable flight the CoG must sit slightly ahead of the <strong>centre of pressure</strong> (where lift acts). If CoG is too far back, the nose pitches up, speed bleeds off, and the plane stalls. Too far forward and it dives — a nose-heavy design every folder knows too well.</p>
+        <div class="card-formula">W = mg</div>
+        <div class="card-tag">Centre of Gravity</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STABILITY SECTION -->
+  <section class="section section-alt" id="stability">
+    <div class="section-label">02 — STABILITY</div>
+    <h2 class="section-title">Balance Is Everything</h2>
+    <div class="two-col">
+      <div class="col-text">
+        <p>A plane that wobbles, rolls, or spins is fighting itself. Designers tune three axes of rotation to achieve stable glide:</p>
+        <ul class="axis-list">
+          <li><span class="axis-name">Pitch</span> — nose up / nose down. Controlled by the horizontal tail (elevator). Adding a small upward flick to the trailing edge of each wing increases the effective elevator area and pushes the nose down to recover from a stall.</li>
+          <li><span class="axis-name">Roll</span> — one wing dips. Controlled by the dihedral angle — the slight V-shape of the wings seen head-on. Dihedral creates a natural self-correcting roll force: if one wing dips, the fuselage slides toward that side, increasing its lift and restoring level flight.</li>
+          <li><span class="axis-name">Yaw</span> — nose swings left or right. Controlled by the vertical fin. Even a small crease along the fuselage top acts as a rudder, keeping the nose pointed into the relative wind.</li>
+        </ul>
+      </div>
+      <div class="col-visual">
+        <div class="axes-diagram">
+          <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+            <!-- Plane silhouette -->
+            <g transform="translate(150,150)">
+              <polygon points="-80,0 80,-20 60,0 80,20" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.5"/>
+              <polygon points="-80,0 60,0 20,40" fill="var(--paper-shadow)" stroke="var(--ink)" stroke-width="1"/>
+              <!-- Pitch axis (red) -->
+              <line x1="-110" y1="0" x2="110" y2="0" stroke="var(--red)" stroke-width="2" stroke-dasharray="6,3"/>
+              <text x="115" y="5" fill="var(--red)" font-size="11" font-family="DM Mono">PITCH</text>
+              <!-- Roll axis (blue) -->
+              <line x1="0" y1="-100" x2="0" y2="100" stroke="var(--blue)" stroke-width="2" stroke-dasharray="6,3"/>
+              <text x="5" y="-104" fill="var(--blue)" font-size="11" font-family="DM Mono">ROLL</text>
+              <!-- Yaw arrow (green) - circular arc -->
+              <path d="M -50,-50 A 70,70 0 0,1 50,-50" fill="none" stroke="var(--green)" stroke-width="2" marker-end="url(#arrow)"/>
+              <text x="-15" y="-80" fill="var(--green)" font-size="11" font-family="DM Mono">YAW</text>
+              <defs>
+                <marker id="arrow" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+                  <path d="M0,0 L6,3 L0,6 Z" fill="var(--green)"/>
+                </marker>
+              </defs>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESIGNS SECTION -->
+  <section class="section" id="designs">
+    <div class="section-label">03 — DESIGNS</div>
+    <h2 class="section-title">Form Follows Flight</h2>
+    <p class="section-intro">Different fold geometries optimise for different flight characteristics. Here are three archetypes and the physics behind each.</p>
+
+    <div class="designs-grid">
+      <div class="design-card">
+        <div class="design-illustration">
+          <svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+            <!-- Classic Dart -->
+            <polygon points="10,60 190,45 150,60 190,75" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.5"/>
+            <polygon points="10,60 150,60 110,90" fill="var(--paper-shadow)" stroke="var(--ink)" stroke-width="1"/>
+            <line x1="10" y1="60" x2="150" y2="60" stroke="var(--ink)" stroke-width="0.8"/>
+          </svg>
+        </div>
+        <h3>The Dart</h3>
+        <div class="design-stat"><span>Best for</span> Distance</div>
+        <p>Long and narrow with a pronounced taper. Low wing area = low drag. The trade-off is a small lift surface, so it needs a firm throw. The CoG sits far forward due to the thick nose layers, giving reliable pitch-down tendency and predictable recovery.</p>
+        <div class="design-tags">
+          <span>Low Drag</span><span>High Speed</span><span>Nose-heavy</span>
+        </div>
+      </div>
+
+      <div class="design-card">
+        <div class="design-illustration">
+          <svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+            <!-- Glider / wide wing -->
+            <polygon points="100,30 190,90 10,90" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.5"/>
+            <polygon points="100,30 100,90 10,90" fill="var(--paper-shadow)" stroke="var(--ink)" stroke-width="1"/>
+            <line x1="100" y1="30" x2="100" y2="90" stroke="var(--ink)" stroke-width="0.8"/>
+            <line x1="100" y1="75" x2="190" y2="90" stroke="var(--ink)" stroke-width="0.6" stroke-dasharray="4,3"/>
+          </svg>
+        </div>
+        <h3>The Glider</h3>
+        <div class="design-stat"><span>Best for</span> Hang Time</div>
+        <p>Wide wingspan relative to fuselage length gives a high aspect ratio. More lift per unit speed means a gentle sink rate. Dihedral is usually built into the fold so wings angle upward slightly, maximising passive roll stability without any adjustments.</p>
+        <div class="design-tags">
+          <span>High Lift</span><span>Slow Sink</span><span>Stable Roll</span>
+        </div>
+      </div>
+
+      <div class="design-card">
+        <div class="design-illustration">
+          <svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+            <!-- Delta / stunt -->
+            <polygon points="100,20 190,100 10,100" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.5"/>
+            <polygon points="100,20 100,100 10,100" fill="var(--paper-shadow)" stroke="var(--ink)" stroke-width="1"/>
+            <line x1="100" y1="20" x2="100" y2="100" stroke="var(--ink)" stroke-width="0.8"/>
+          </svg>
+        </div>
+        <h3>The Delta</h3>
+        <div class="design-stat"><span>Best for</span> Stunts & Loops</div>
+        <p>Heavily swept delta wings push the CoG right to the neutral-stability boundary. Small adjustments to the trailing-edge angle shift the CoP forward or back, making it highly responsive. Upward flaps create spectacular loops; asymmetric flaps induce tight spirals.</p>
+        <div class="design-tags">
+          <span>Swept Wing</span><span>Maneuverable</span><span>Flap-sensitive</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECORD SECTION -->
+  <section class="section section-alt section-record">
+    <div class="section-label">04 — THE RECORD</div>
+    <div class="record-layout">
+      <div class="record-number">69.14<span>m</span></div>
+      <div class="record-text">
+        <h2>The World Record Throw</h2>
+        <p>On December 2, 2022, Dillon Ruble launched a paper plane a staggering <strong>69.14 metres</strong> (226 ft 10 in) in Las Vegas — the farthest paper plane throw ever recorded by Guinness World Records. The design, engineered by aerodynamicist John Collins ("The Paper Airplane Guy"), used a specially tuned dart with a reinforced leading edge. Collins spent over a year refining the fold angle to just 0.3° more than a standard dart, shifting the CoG forward enough to sustain maximum glide ratio at release speed.</p>
+        <a href="#game" class="btn btn-primary">Try to Beat It (Sort Of)</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GAME SECTION -->
+  <section class="section section-game" id="game">
+    <div class="section-label">05 — INTERACTIVE</div>
+    <h2 class="section-title">Launch Your Plane</h2>
+    <p class="section-intro">Adjust your plane's design and throw angle, then launch. Physics does the rest.</p>
+    <div id="game-root"></div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-plane">✈</div>
+    <p>Paper Planes — The Science of Flight</p>
+    <p class="footer-sub">Built with curiosity & caffeine. Physics by Newton, Bernoulli, and a lot of folding.</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
